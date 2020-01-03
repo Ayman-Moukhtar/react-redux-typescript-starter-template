@@ -1,8 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from './../../logo.svg';
 import './App.css';
+import { useAppState } from './hooks';
 
 const App: React.FC = () => {
+  const {
+    title,
+    changeTitle
+  } = useAppState();
+
+  setTimeout(() => changeTitle("Changed Title"), 3000);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -16,7 +24,7 @@ const App: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          {title}
         </a>
       </header>
     </div>
