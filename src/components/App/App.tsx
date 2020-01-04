@@ -1,9 +1,11 @@
 import React from 'react';
+
 import logo from './../../logo.svg';
-import './App.css';
 import { useAppState } from './hooks';
 
-const App: React.FC = () => {
+import './App.css';
+
+const App = () => {
   const {
     title,
     changeTitle
