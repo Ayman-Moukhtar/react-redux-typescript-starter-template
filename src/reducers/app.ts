@@ -4,7 +4,7 @@ import { changeTitleAction, getDataAction } from "../actions";
 import { TAppState } from "../types";
 
 const initialState: TAppState = {
-    title: 'Initial Title',
+    title: 'This is App Module',
     data: []
 };
 

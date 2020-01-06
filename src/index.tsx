@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
 import { combineReducers, createStore } from 'redux';
 
-import App from './components/App/App';
+import Shell from './components/Shell';
 import { appReducer } from './reducers';
 import * as serviceWorker from './serviceWorker';
 import { TAppState } from './types';
@@ -22,7 +22,7 @@ const store = createStore(rootReducer);
 
 ReactDOM.render(
     <Provider store={store}>
-        <App />
+        <Shell />
     </Provider>,
     document.getElementById('root')
 );

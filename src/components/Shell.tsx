@@ -1,17 +1,17 @@
 import React, { lazy, Suspense } from 'react';
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import { Redirect, Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 
 const App = lazy(() => import('./App/App'));
 
-const Routing = () => (
+const Shell = () => (
     <Router>
         <Suspense fallback={<div>Loading</div>}>
             <Switch>
-                <Route exact path='/' component={App} />
-                <Redirect to='/' />
+                <Route exact path='/app' component={App} />
+                <Redirect to='/app' />
             </Switch>
         </Suspense>
     </Router>
 );
 
-export default Routing;
+export default Shell;

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 
+import SEO from '../Shared/SEO';
 import logo from './../../logo.svg';
 import { useAppState } from './hooks';
 
@@ -19,7 +20,7 @@ const App = () => {
       setTimeout(
         () => {
           getData();
-          changeTitle("Changed Title");
+          changeTitle("This is App Module New Title");
         },
         3000
       );
@@ -30,6 +31,11 @@ const App = () => {
 
   return (
     <div className="App">
+      <SEO
+        title={title}
+        description="This is a page describing the app module"
+        type="article"
+      />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -43,7 +49,7 @@ const App = () => {
         >
           {title}
         </a>
-        {data.map(item => <div>{item}</div>)}
+        {data.map(item => <div key={item}>{item}</div>)}
       </header>
     </div>
   );
