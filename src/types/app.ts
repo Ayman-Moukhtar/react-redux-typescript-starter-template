@@ -1,3 +1,4 @@
 export type TAppState = {
-    title: string
+    title: string,
+    data: string[]
 };

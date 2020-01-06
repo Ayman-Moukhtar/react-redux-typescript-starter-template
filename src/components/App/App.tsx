@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import logo from './../../logo.svg';
 import { useAppState } from './hooks';
@@ -8,10 +8,25 @@ import './App.css';
 const App = () => {
   const {
     title,
-    changeTitle
+    data,
+    changeTitle,
+    getData
   } = useAppState();
 
-  setTimeout(() => changeTitle("Changed Title"), 3000);
+
+  useEffect(
+    () => {
+      setTimeout(
+        () => {
+          getData();
+          changeTitle("Changed Title");
+        },
+        3000
+      );
+    },
+    // eslint-disable-next-line
+    []
+  );
 
   return (
     <div className="App">
@@ -28,6 +43,7 @@ const App = () => {
         >
           {title}
         </a>
+        {data.map(item => <div>{item}</div>)}
       </header>
     </div>
   );
