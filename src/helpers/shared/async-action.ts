@@ -2,7 +2,7 @@ import { Dispatch } from "react";
 import { AnyAction } from "redux";
 import { AsyncActionCreators } from "typescript-fsa";
 
-const asyncAction = <TParameters, TSuccess, TError>(
+const async = <TParameters, TSuccess, TError>(
     action: AsyncActionCreators<TParameters | undefined, TSuccess, TError>,
     worker: (params?: TParameters) => Promise<TSuccess>
 ) => (
@@ -21,5 +21,5 @@ const asyncAction = <TParameters, TSuccess, TError>(
     };
 
 export {
-    asyncAction
+    async
 };
